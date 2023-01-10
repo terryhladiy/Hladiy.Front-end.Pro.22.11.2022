@@ -57,3 +57,21 @@ function makeArray(lengthXarr, lengthYarr) {
   return arr;
 }
 console.log(makeArray(inCount, onCount));
+// #4
+const userString = prompt('Введіть строку або набір слів', 'string');
+const userSymbol = prompt('Введіть букви які хочете забрати з вашої строки');
+
+function deleteSymbol(string, symbol) {
+  const newArray = [...string];
+  for (let i = 0; i <= newArray.length; i += 1) {
+    for (let j = 0; j < symbol.length; j += 1) {
+      if (newArray[i] === symbol[j]) {
+        newArray.splice(i, 1);
+        i -= 1;
+      }
+    }
+  }
+  return newArray.join();
+}
+deleteSymbol(userString, userSymbol);
+// ready
